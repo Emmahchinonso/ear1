@@ -9,7 +9,6 @@ import AppLoading from 'expo-app-loading';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    'coolvetica-condensed': require('./app/assets/fonts/coolvetica-condensed-rg.ttf'),
     'coolvetica': require('./app/assets/fonts/coolvetica-rg.ttf')
   });
 
@@ -19,7 +18,7 @@ export default function App() {
     return (
 		<View style={styles.container}>
 			<LoginScreen />
-			<StatusBar style="auto" />
+			<StatusBar style="auto" backgroundColor="transparent"/>
 		</View>
 	);
   }
