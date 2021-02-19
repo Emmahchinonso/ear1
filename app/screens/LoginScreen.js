@@ -1,7 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
 import { COLORS } from "../constants/Colors";
-import CustomButton from '../components/CustomButton'
+import {
+	CustomButton,
+	CustomText,
+	SmallText,
+	Separator,
+	Bar,
+} from "../components";
 
 const LoginScreen = () => {
 	return (
@@ -20,19 +26,25 @@ const LoginScreen = () => {
 			</View>
 
 			<View style={styles.content}>
-				<Text style={styles.text}>
-					Meet <Text style={styles.innerText}>ear1</Text>,
-				</Text>
-        <CustomButton>
-          Login / Sign Up with apple
-        </CustomButton>
-        <CustomButton>
-          Sign Up with Google
-        </CustomButton>
-        <CustomButton>
-          Sign Up with Twitter
-        </CustomButton>
+				<CustomText color={COLORS.grey} size="32px">
+					Meet <CustomText color={COLORS.white}>ear1</CustomText>,
+				</CustomText>
+				<Separator size="16px" />
+
+				<CustomButton bg="#171817">Login / Sign Up with apple</CustomButton>
+				<Separator size="8px" />
+				<CustomButton color={COLORS.black400} bg={COLORS.green}>
+					Sign Up with Google
+				</CustomButton>
+				<Separator size="8px" />
+				<CustomButton bg={COLORS.blue}>Sign Up with Twitter</CustomButton>
+				<Separator size="10px" />
+				<SmallText style={styles.textSmall}>
+					Have an account?
+					<Text style={styles.decorateText}> Login</Text>
+				</SmallText>
 			</View>
+			<Bar bg={COLORS.white} opacity="0.1" />
 		</View>
 	);
 };
@@ -67,7 +79,7 @@ const styles = StyleSheet.create({
 		left: "21px",
 	},
 	content: {
-		marginTop: "15px",
+		marginTop: "16px",
 		paddingLeft: "21px",
 		paddingRight: "21px",
 	},
@@ -77,8 +89,20 @@ const styles = StyleSheet.create({
 		fontSize: "32px",
 		lineHeight: "38px",
 	},
+	textSmall: {
+		textAlign: "center",
+		color: COLORS.white,
+		opacity: "0.5",
+		fontSize: "12px",
+		lineHeight: "20px",
+		fontWeight: "400",
+	},
 	innerText: {
 		color: COLORS.white,
+	},
+	decorateText: {
+		textDecorationStyle: "solid",
+		textDecorationLine: "underline",
 	},
 });
 

@@ -14,8 +14,9 @@ const styles = StyleSheet.create({
 		textAlign: "center",
 	},
 	text: {
-		fontFamily: "coolvetica-condensed",
-    fontSize: '19px'
+		fontFamily: "coolvetica",
+    fontSize: '19px',
+    fontWeight: '400'
 	},
 });
 
